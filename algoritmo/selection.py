@@ -23,6 +23,7 @@
 numbers = [2,8,6,10,7,5,9,4,3,1]
 
 n = len(numbers)
+# Complexidade Temporal O(n^2)
 for pos_inicial in range(n):
     min_pos = pos_inicial
     for index in range(pos_inicial+1, n):
