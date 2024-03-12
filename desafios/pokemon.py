@@ -17,14 +17,14 @@
 # 10- Pontos extras tratando o input corretamente.
 #   - Pontos extras para usar try/except para lidar com input
 # 11- Muitos pontos extras permitindo que o usuário saia e entre livremente da criação de usuário/login. Dica: Você pode criar os estados da aplicação numa pilha
-import requests
-import json
+# import requests
+# import json
 
-class Pokemon:
-    def __init__(self):
-        self.base_experience = 0
-x = requests.get('https://pokeapi.co/api/v2/pokemon/pikachu')
-j = json.loads(x.text)
+# class Pokemon:
+#     def __init__(self):
+#         self.base_experience = 0
+# x = requests.get('https://pokeapi.co/api/v2/pokemon/pikachu')
+# j = json.loads(x.text)
 
 
-print(Pokemon(**j).__dict__)
+# print(Pokemon(**j).__dict__)
