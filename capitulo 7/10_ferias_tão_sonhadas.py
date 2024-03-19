@@ -13,4 +13,4 @@ while dream:
 
 print("\npesquisa completa!")
 for name,place in respostas.items():
-    print(f"{name} gostaria deir para {place}")
+    print(f"{name} gostaria de ir para {place}")

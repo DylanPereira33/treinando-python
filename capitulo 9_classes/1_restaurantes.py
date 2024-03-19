@@ -1,4 +1,4 @@
-class restaurant:
+class Restaurant:
     def __init__(self,name,type):
         self.name = name
         self.type = type
@@ -10,6 +10,6 @@ class restaurant:
     def open_restaurant(self):
         print(f"O {self.name} esta aberto!")
 
-my_restaurant = restaurant("Outback", "Australiana")
+my_restaurant = Restaurant("Outback", "Australiana")
 my_restaurant.describe_restaurant()
 my_restaurant.open_restaurant()
