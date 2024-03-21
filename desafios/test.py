@@ -15,10 +15,12 @@ while True:
     if (len(result1) == 2):
         sum = result1[1]
 
+    total = 0
     faces = result1[0]
     dados = result[0]
     for i in result[0]:
         aleatorio = randint(1,faces)
-        total = sum(int(aleatorio))
-    print(total)
+        total += aleatorio
+    
+        print(total)
 

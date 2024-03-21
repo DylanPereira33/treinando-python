@@ -8,14 +8,40 @@
 
 from random import randint
 
-def roll(self):
-    print(randint(1,6))
-
+resultados = []
 
 while True:
-    comando = input("Digite /r e um dos dados a seguir: d4,d6,d8,d10,d12,d20")
+    comando = input("Digite qualquer dado (ou 'quit' para encerrar): ")
 
-    if in  
+    if comando.lower() == 'quit':
+        break
+
+    result = comando.split("d")
+    qtd_dados = int(result[0])
+    result1 = result[1].split("+")  
+    qtd_faces = int(result1[0]) 
+
+    sum = 0
+    mult = 0
+    if len(result1) > 1:  
+        sum = int(result1[1]) 
+        
+    elif (len(result1) == 1):
+        result1 = result[1].split("-")
+        mult=-1
+
+
+    total = 0
+    for _ in range(qtd_dados):
+        total += randint(1, qtd_faces)
+
+    resultado_final = total + mult
+    resultados.append(resultado_final)
+
+    print("Resultado da rolagem:", resultado_final)
+
+print("Resultados armazenados:", resultados)
+
     
 
 
