@@ -8,56 +8,59 @@
 
 from random import randint
 
-resultados = []
+print("""Bem-vindo ao rolador de dados.
+      Escreva um dado para rolar seguindo o exemplo: 3d6+5""")
+
+class Rolagem:
+    def __init__(self, faces, quantidade = 1, bonus = 0):
+        self.qtd   = quantidade
+        self.faces = faces
+        self.bonus = bonus
+        self.rolls = []
+   
+    def roll(self):
+        for _ in range(self.qtd):
+            self.rolls.append((randint(1,self.faces)))
+
+        if self.bonus < 0:
+            print(f"{self.rolls}{self.bonus} = {sum(self.rolls) + self.bonus}")
+        elif self.bonus > 0:
+            print(f"{self.rolls} + {self.bonus} = {sum(self.rolls) + self.bonus}")
+        else:
+            print(f"{self.rolls} = {sum(self.rolls) + self.bonus}")
+ 
+def getData(command):
+    loc_d = command.find("d")
+    if loc_d == -1:
+        raise Exception("formato incorreto")
+
+    bonus = 0
+    loc_s = command.find("+")
+    if loc_s == -1:
+        loc_s = command.find("-")
+
+    if loc_s != -1:
+        bonus = int(command[loc_s:])
+        faces = int(command[loc_d+1:loc_s])
+    else:
+        faces = int(command[loc_d+1:])
+
+
+    qtd = 1
+    if command[0] != "d":
+        qtd = int(command[:loc_d])
+    return (qtd, faces, bonus)
+
 
 while True:
-    comando = input("Digite qualquer dado (ou 'quit' para encerrar): ")
-
-    if comando.lower() == 'quit':
+    (qtd, faces, bonus) = (0, 0, 0)
+    command = input("roll: ")
+    if command == '':
         break
 
-    result = comando.split("d")
-    qtd_dados = int(result[0])
-    result1 = result[1].split("+")  
-    qtd_faces = int(result1[0]) 
+    (qtd, faces, bonus) = getData(command)
 
-    sum = 0
-    mult = 0
-    if len(result1) > 1:  
-        sum = int(result1[1]) 
-        
-    elif (len(result1) == 1):
-        result1 = result[1].split("-")
-        mult=-1
+    rolagem = Rolagem(faces, qtd, bonus)
+    rolagem.roll()
 
-
-    total = 0
-    for _ in range(qtd_dados):
-        total += randint(1, qtd_faces)
-
-    resultado_final = total + mult
-    resultados.append(resultado_final)
-
-    print("Resultado da rolagem:", resultado_final)
-
-print("Resultados armazenados:", resultados)
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print("Fim do programa.")
