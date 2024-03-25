@@ -1,0 +1,9 @@
+Em Python podemos ter Variaveis: atribuicao de valores a variaveis.'
+Em Python podemos ter  Estruturas condicionais (if, else, elif): Para tomar decisoes com base em condiçoes.
+Em Python podemos ter Estruturas de repeticao (for, while): Para executar blocos de codigo repetidamente.
+Em Python podemos ter Listas: Sequencia ordenada de itens mutaveis.
+Em Python podemos ter Tuplas: Sequencia ordenada de itens imutaveis.
+Em Python podemos ter Dicionarios: Estrutura de dados que mapeia chaves a valores.
+Em Python podemos ter Funcoes: Blocos de codigo reutilizaveis.
+Em Python podemos ter Compreensao de lista (List Comprehension): Forma concisa de criar listas.
+Em Python podemos ter Manipulacão de arquivos: Para ler e escrever dados em arquivos.
