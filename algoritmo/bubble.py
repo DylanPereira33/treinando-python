@@ -1,8 +1,17 @@
-numbers = [2,8,6,10,7,5,9,4,3,1]
-n = len(numbers)
+import random
 
-for pos_inicial in range(n-1):
-    for pos_atual in range(n-1-pos_inicial):
-      if numbers[pos_atual] > numbers[pos_atual+1]:
-        numbers[pos_atual],numbers[pos_atual+1] = numbers[pos_atual+1],numbers[pos_atual]
+def bubble_sort(list):
+  length = len(list)
+  for i in range(length-1):
+    for j in range(length-1-i):
+      if list[j] > list[j+1]:
+        list[j],list[j+1] = list[j+1],list[j]
+
+numbers = []
+for i in range(100):
+    numbers.append(random.randint(0, 100))
+bubble_sort(numbers)
+nums = [10, 9, 8, 7, 11, 12, 13]
+bubble_sort(nums)
 print(numbers)
+print(nums)
