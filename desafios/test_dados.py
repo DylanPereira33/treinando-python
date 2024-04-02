@@ -1,6 +1,6 @@
 from random import randint
 
-print("Role um dado! Ex: 1d20")
+# print("Role um dado! Ex: 1d20")
 
 class Roll:
     def __init__(self,qtd,faces,bonus=0):
@@ -25,7 +25,6 @@ def get_dados(comando):
         loc_d = comando.find("d")
         if loc_d == -1:
             raise Exception("dados errados")
-
         
         loc_s = comando.find("+")
         if loc_s == -1:
@@ -48,7 +47,6 @@ def get_dados(comando):
         return None
     
 while True:
-    
     comando = input("Roll:")    
     if comando == "":
          print("obrigado por jogar!") 
@@ -60,8 +58,25 @@ while True:
 
     (qtd,faces,bonus) = result
     rolling = Roll(qtd,faces,bonus)
-    rolling.roll()
+    # rolling.roll()
 
-print("fim do programa")
-            
+# print("fim do programa")
+
+
+def test_get_dados():
+
+    assert get_dados("3d20") == (3,20,0)
+
+    assert get_dados("4d6-10") == (4,6,-10)
+
+    assert get_dados("1d8+5") == (1,8,5)
+ 
+    assert get_dados("d6") == (1,6)
     
+    assert get_dados("0d6") == None
+
+    assert get_dados("d") == None
+    
+    assert get_dados("6") == None
+
+test_get_dados()
