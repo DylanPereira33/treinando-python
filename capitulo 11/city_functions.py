@@ -4,4 +4,3 @@ def get_city_country(city, country, população=""):
     else:
          location = f"{city}, {country}"
     return location.title()
-    

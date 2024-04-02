@@ -2,7 +2,6 @@ import unittest
 from city_functions import get_city_country
 
 class CityCountryTestCase(unittest.TestCase): 
-    
     def test_city_country(self):
         location = get_city_country("santiago", "chile")
         self.assertEqual(location,"Santiago, Chile")
