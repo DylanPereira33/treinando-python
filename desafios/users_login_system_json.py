@@ -125,6 +125,3 @@ def choice():
 
 choice()
 
-
-
-

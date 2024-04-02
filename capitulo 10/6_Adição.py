@@ -1,12 +1,8 @@
 first_number = input("first_number:")
 second_number = input("second_number:")
 
-try: 
+try:
      asnwer = int(first_number) + int(second_number)
-     print(asnwer)   
+     print(asnwer)
 except ValueError:
     print(" Não apresenta números")
-    
-
-
-     
